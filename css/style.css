@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+  width: 80%;
+  margin: 10px auto;
+}
+
+header{
+    background-color: orange;
+    min-height: 80px;
+}
+
+#main{
+    background-color: white;
+    min-height: 600px;
+}
+#column1{
+    background-color: blue;
+    width:30%;
+    float: left;
+    min-height: 600px;
+
+}
+
+#sidebar{
+    background-color: lightgrey;
+    min-height: 600px;
+}
+
+footer{
+    background-color: #090;
+    min-height: 60px;
+}
