@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div id="container">
+
+        <header>
+            <img src="images/logo.png" height = "60px" alt="logo">
+
+        </header>
+
+        <div id="main">
+
+            <div id="column1">
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <hr />
+                        <a  href="index.html">Home</a><hr/>
+                        <a  href="profile.html">Profile</a><hr/>
+                        <a  href="login.html"class="selected">Login</a>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            
+            <div id="sidebar">
+                <br/>
+                    <form method="post" action="index.html" class="myform">
+                            <div class="box">
+                            <h1>Dashboard</h1>
+                            
+                            <input type="email" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+                              
+                            <input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+                              
+                            <a href="#"><div class="btn">Sign In</div></a> <!-- End Btn -->
+                            
+                            <a href="#"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
+                              
+                            </div> <!-- End Box -->
+                              
+                            </form>
+                        
+            </div>
+        </div>
+        <footer>
+                        <a  href="index.html">Home</a>
+                        <a  href="#" >About Us</a>
+                        <a  href="#">Contact Us</a>
+                        <hr />
+        </footer>
+    </div>
+</body>
+</html>
+
