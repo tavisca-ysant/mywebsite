@@ -1,38 +1,46 @@
-function validate(){
+
+class UserData {
+  constructor(email, password, cpassword) {
+    this.email = email;
+    this.password = password;
+    this.cpassword = cpassword;
+  }
+
+  validate(){
+    if(this.email == ""){
+      alert("Please enter email");
+      this.email.focus();
+      return false;
+    }
+
+  if(this.password == ""){
+      alert("Please enter password");
+      this.password.focus();
+      return false;
+     }
+
+  if(this.cpassword == ""){
+      alert("Please enter password again");
+      this.cpassword.focus();
+      return false;
+     }
+
+  if(this.password != this.cpassword){
+      alert("Password and confirm password must match");
+      this.password.focus();
+      return false;
+  }
+  }
+}
+
+
+
+function GetData(){
     var email = document.forms["loginform"]["email"];
     var password = document.forms["loginform"]["password"];
     var cpassword = document.forms["loginform"]["cpassword"];
-
-    if(email == ""){
-        alert("Please enter email");
-        email.focus();
-        return false;
-
-    }
-
-    if(password == ""){
-        alert("Please enter password");
-        password.focus();
-        return false;
-
-    }
-
-    if(cpassword == ""){
-        alert("Please enter password again");
-        cpassword.focus();
-        return false;
-
-    }
-
-    if(password != cpassword){
-        alert("Password and confirm password must match");
-        password.focus();
-        return false;
-
-    }
-
-
-
+    var userData = new UserData(email, password, cpassword);
+    return userData.validate();
 }
 
 function field_focus(field, email)
@@ -61,7 +69,7 @@ $('a').click(function(event){
     event.preventDefault(); 
     });
 
-    function edit_row(no)
+function edit_row(no)
 {
  document.getElementById("edit_button"+no).style.display="none";
  document.getElementById("save_button"+no).style.display="block";
@@ -141,11 +149,11 @@ function search() {
         row += tableData.rows[i].cells[j].innerHTML;
         
         if(row.indexOf(filter) > -1){
-          row.style.display = "";
+          
           break;
         }
         else{
-          row.style.display = "none";
+          row.innerHTML = "";
 
         }
     }
