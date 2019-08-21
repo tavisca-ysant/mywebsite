@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta subject="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/scripts.js"></script>
+    
+
+</head>
+<body>
+    <div id="container">
+
+        <header>
+            <img src="images/logo.png" height = "60px" alt="logo">
+
+        </header>
+
+        <div id="main">
+
+            <div id="column1">
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <hr />
+                        <a  href="index.html" class="selected">Home</a><hr/>
+                        <a  href="profile.html">Profile</a><hr/>
+                        <a  href="login.html">Login</a>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+            
+            <div id="sidebar">
+                <br/><br/>
+                <center>
+                 <form>
+                     <input type="search" id="search-btn" placeholder="Search..."><button type="submit" onclick="search()"><i class="fa fa-search"></i></button>
+
+                 </form>
+                 </center>
+                 <br/><br/>
+                 <div class="tables">
+                    <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+                        <tr>
+                        <th>course</th>
+                        <th>task</th>
+                        <th>Actions</th>
+                        </tr>
+                        
+                        <tr id="row1">
+                        <td id="course_row1">DS</td>
+                        <td id="task_row1">Study</td>
+                        
+                        <td>
+                        <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')">
+                        <input type="button" id="save_button1" value="Save" class="save" onclick="save_row('1')">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                        </td>
+                        </tr>
+                        
+                        <tr id="row2">
+                        <td id="course_row2">JS</td>
+                        <td id="task_row2">Implement</td>
+                        
+                        <td>
+                        <input type="button" id="edit_button2" value="Edit" class="edit" onclick="edit_row('2')">
+                        <input type="button" id="save_button2" value="Save" class="save" onclick="save_row('2')">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
+                        </td>
+                        </tr>
+                        
+                        <tr id="row3">
+                        <td id="course_row3">C#</td>
+                        <td id="task_row3">Study</td>
+                        
+                        <td>
+                        <input type="button" id="edit_button3" value="Edit" class="edit" onclick="edit_row('3')">
+                        <input type="button" id="save_button3" value="Save" class="save" onclick="save_row('3')">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
+                        </td>
+                        </tr>
+                        
+                        <tr>
+                        <td><input type="text" id="new_course"></td>
+                        <td><input type="text" id="new_task"></td>
+                        
+                        <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+                        </tr>
+                        
+                        </table>
+                </div>
+
+               
+
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <a  href="index.html">Home</a>
+                <a  href="#" >About Us</a>
+                <a  href="#">Contact Us</a>
+                <hr />
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
