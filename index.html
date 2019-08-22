@@ -11,7 +11,7 @@
     
 
 </head>
-<body>
+<body onload="initialSetup()">
     <div id="container">
 
         <header>
@@ -27,7 +27,8 @@
                         <hr />
                         <a  href="index.html" class="selected">Home</a><hr/>
                         <a  href="profile.html">Profile</a><hr/>
-                        <a  href="login.html">Login</a>
+                        <a  href="login.html">Login</a><hr/>
+                        <a  href="signup.html">Sign Up</a>
                         <hr />
                     </div>
                 </div>
@@ -37,8 +38,7 @@
                 <br/><br/>
                 <center>
                  <form>
-                     <input type="search" id="search-btn" placeholder="Search..."><button type="submit" onclick="search()"><i class="fa fa-search"></i></button>
-
+                     <input type="search" id="search-btn" onkeyup="search()" placeholder="Search...">
                  </form>
                  </center>
                  <br/><br/>

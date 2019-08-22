@@ -33,41 +33,38 @@ class UserData {
   }
 }
 
-
+function initialSetup() {
+  fetch('https://jsonplaceholder.typicode.com/todos/')
+      .then(response => response.json())
+      .then(json => console.log(json));
+}
 
 function GetData(){
     var email = document.forms["loginform"]["email"];
     var password = document.forms["loginform"]["password"];
     var cpassword = document.forms["loginform"]["cpassword"];
-    var userData = new UserData(email, password, cpassword);
+    var userData = new UserData(email.value, password.value, cpassword.value);
     return userData.validate();
 }
 
-function field_focus(field, email)
+function field_focus(field, passed)
   {
-    if(field.value == email)
+    if(field.value == passed)
     {
       field.value = '';
     }
   }
 
-  function field_blur(field, email)
+  function field_blur(field, passed)
   {
-    if(field.value == '')
+    if(field.passed == '')
     {
       field.value = email;
     }
   }
 
 //Fade in dashboard box
-$(document).ready(function(){
-    $('.box').hide().fadeIn(1000);
-    });
 
-//Stop click event
-$('a').click(function(event){
-    event.preventDefault(); 
-    });
 
 function edit_row(no)
 {
@@ -126,38 +123,20 @@ function search() {
   // Declare variables
   var input, filter;
   input = document.getElementById("search-btn");
-  filter = input.value;
-  tableData = document.getElementById("data_table");
+  filter = input.value.toUpperCase();
   
-
-  // Loop through all list items, and hide those who don't match the search query
-  // for (i = 0; i < li.length; i++) {
-  //   a = li[i].getElementsByTagName("a")[0];
-  //   txtValue = a.textContent || a.innerText;
-  //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
-  //     li[i].style.display = "";
-  //   } else {
-  //     li[i].style.display = "none";
-  //   }
-  // }
-  for (var i = 1 ; i < tableData.rows.length; i++) {
-   
-    var row = "";
-
-    for (var j = 0; j < tableData.rows[i].cells.length; j++) {
-      
-        row += tableData.rows[i].cells[j].innerHTML;
-        
-        if(row.indexOf(filter) > -1){
-          
-          break;
-        }
-        else{
-          row.innerHTML = "";
-
-        }
+  tableData = document.getElementById("data_table");
+  tr = tableData.getElementsByTagName("tr");
+  
+for (i = 0; i < tr.length; i++) {
+  td = tr[i].getElementsByTagName("td")[0];
+  if (td) {
+    txtValue = td.textContent || td.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      tr[i].style.display = "";
+    } else {
+      tr[i].style.display = "none";
     }
-
-    
+  } 
 }
 }

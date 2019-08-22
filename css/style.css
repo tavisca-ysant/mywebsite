@@ -12,7 +12,14 @@
     text-align: center;
     }
 
-    
+
+    input[type='submit'], button, [aria-label]{
+      cursor: pointer;
+    }
+    #spoiler{
+      display: none;
+    }
+
 .dropdown-content a {
 color: black;
 padding: 12px 16px;
@@ -65,6 +72,26 @@ p{
     color:#525252;
   }
   
+  .btn2{
+    float:left;
+    background:#3498db;
+    width:125px;  padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    border-radius:4px;
+    border: #2980b9 1px solid;
+    
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:10px;
+    font-weight:800;
+    font-size:0.8em;
+  }
+  
+  .btn2:hover{ 
+  background:#3594D2; 
+  }
+
   .box{
     background:white;
     width:300px;
